@@ -1,0 +1,175 @@
+<template name="profile">
+
+
+<div id="profile-wrap">
+<center>
+
+	<h1 class="username">{{username}}</h1>
+	<h3>{{email}}</h3>
+	<h3>Year {{year}} from {{school}}</h3>
+
+		<div class="" id="">
+			<img src="new up.png" class="profile-smiley" id="like">
+			<img src="new down.png" class="profile-smiley" id="dislike">
+		</div>
+		<div class="score" id="">
+			<h3 class="count green block">{{userlikeScore}}</h3>
+			<h3 class="count red block">{{userdislikeScore}}</h3>
+	  </div>
+
+		<form class="profile-form">
+			<h2 class="profileForm-heading">Edit Profile</h2>
+				<h6 class="year">Year of Study:</h6>
+				<select class="form-control" id="year" name="year">
+						<option selected>{{year}}</option>
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>Others</option>
+				</select>
+
+			<h6 class="year">School of Study:</h6>
+			<select class="form-control" id="school" name="school">
+					<option selected>{{school}}</option>
+					<option>Arts & Social Sciences</option>
+					<option>Business</option>
+					<option>Computing</option>
+					<option>Continuing & Lifelong Education</option>
+					<option>Dentistry</option>
+					<option>Design & Environment</option>
+					<option>Engineering</option>
+					<option>Law</option>
+					<option>Medicine</option>
+					<option>Music</option>
+					<option>Public Health</option>
+					<option>Science</option>
+					<option>Yale-NUS College</option>
+					<option>U-Wide Programme</option>
+			</select>
+
+			<!--<label for="reviewName" class="sr-only">Module Code: Module Name</label>
+			<input type="text" name="reviewName" id="reviewName" class="form-control" placeholder="e.g. CS1231: Discrete Structures" >-->
+
+		<button class="btn btn-lg btn-info btn-block" id="update-profile" type="submit">Update Profile</button>
+		<!--<button class="btn btn-lg btn-warning btn-block" id="cancelEditedProfile">Cancel</button>-->
+</form>
+
+	<!--<button class="btn btn-lg btn-primary btn-block" id="edit-profile" type="submit">Edit Profile</button>-->
+</center>
+</div>
+<!--{{else}}
+{{/each}}-->
+
+	<!--{{#if editProfile}}
+	{{else}}-->
+
+
+<!--{{/if}}-->
+
+{{#each userReviews}}
+
+{{#if editing}}
+
+	<div id="reviewForm-wrap">
+		<center>
+			<form class="edit-post">
+
+				<h2 class="reviewForm-heading">Edit Review</h2>
+				<h6 class="hideName">Hide Name?</h6>
+						<select class="form-control" id="hideName" name="hideName">
+							<option>Yes</option>
+							<option>No</option>
+						</select>
+				<h6 class="modulecode">Module Code:</h6>
+				<label for="reviewName" class="sr-only">Module Code: Module Name</label>
+				<input type="text" name="reviewName" id="editreviewName" class="form-control" placeholder="e.g. CS1231: Discrete Structures" value="{{reviewName}}">
+
+				<h6 class="semester">Taken in:</h6>
+				<label for="semester" class="sr-only">Semester taken in: e.g. AY17/18 S1</label>
+				<input type="text" name="semester" id="editsemester" class="form-control" placeholder="e.g. AY17/18 S1" value="{{semester}}">
+
+				<h6 class="recommendation">Recommendation Level:</h6>
+                  <select class="form-control" id="recommendation" name="recommendation">
+									<option>{{recommendation}}</option>
+									<option>5 (Being the most recommended)</option>
+                  <option>4</option>
+                  <option>3</option>
+                  <option>2</option>
+                  <option>1 (Being the least recommended)</option>
+                  </select>
+
+				<h6 class="diff">Difficulty of Module:</h6>
+                  <select class="form-control" id="diff" name="diff">
+									<option>{{diff}}</option>
+                  <option>Hard</option>
+                  <option>Moderate</option>
+                  <option>Easy</option>
+                  </select>
+
+                <h6 class="workload">Workload of Module:</h6>
+                 <select class="form-control" id="workload" name="workload">
+									<option selected>{{workload}}</option>
+                  <option>High</option>
+                  <option>Moderate</option>
+                  <option>Low</option>
+                 </select>
+
+								 <h6 class="webcast">Availability of Webcast</h6>
+											<select class="form-control" id="webcast" name="webcast">
+												<option selected>{{webcast}}</option>
+												<option>Yes</option>
+												<option>No</option>
+											</select>
+
+
+                 <h6 class="steepness">Steepness of Bellcurve:</h6>
+                 <select class="form-control" id="steepness" name="steepness">
+									<option selected>{{steepness}}</option>
+									<option>High</option>
+                  <option>Moderate</option>
+                  <option>Low</option>
+                  <option>No bellcurve</option>
+                 </select>
+
+				<label for="reviewPost" class="sr-only">Opinions on module</label>
+				<!--removed max length-->
+				<textarea rows="5" name="reviewPost" id="editreviewPost" class="form-control" placeholder="Share your opinions about this module...">{{reviewPost}}</textarea>
+				<!--<input type="text" name="jokePost" id="jokePost" class="form-control" placeholder="Break A Leg!">-->
+
+				<button class="btn btn-lg btn-info btn-block" id="saveEditedReview" type="submit">Edit Review</button>
+				<button class="btn btn-lg btn-warning btn-block" id="cancelEditedReview" type="submit">Cancel</button>
+			</form>
+		</center>
+	</div>
+{{else}}
+	<div class="review">
+		<div class="row">
+			<div class=".col-sm-6 .col-md-5 .col-lg-6" id="info">
+				<!--jokeName,semester,recommendation,diff,workload,steepness,jokePost-->
+				<h1 class="review-title">{{reviewName}}</h1>
+				<p class="semester">Taken in: {{semester}}</p>
+				<p class="recommendation">Recommendation Level: {{recommendation}}</p>
+				<p class="diff">Difficulty Level: {{diff}}</p>
+				<p class="workload">Workload: {{workload}}</p>
+				<p class="webcast">Availabilty of Webcast: {{webcast}}</p>
+				<p class="steepness">Steepness of Bellcurve: {{steepness}}</p>
+
+			</div>
+		</div>
+
+		<p class="regular review-desc">"{{reviewPost}}"</p>
+		<a class="hashtag" id="hashtag" href="/hashtags">{{hashtag}}</a>
+		<p class="meta">Posted by: {{author}}(Year {{year}}) from {{school}} on {{date}}</p>
+		<!--author part must change to username, am using email right now as i cant get the username-->
+
+		<button class="btn btn-sml btn-warning" id="edit-review">Edit Review</button>
+		<button class="btn btn-sml btn-danger" id="delete-review">Delete Review</button>
+
+	</div>
+{{/if}}
+{{else}}
+<h1>No Reviews to display</h1>
+{{/each}}
+
+</template>

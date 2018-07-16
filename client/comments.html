@@ -1,0 +1,24 @@
+<!--Changed format of post-->
+<!--need to add more stuff-->
+<template name="comments">
+{{#if currentUser}}
+<div class= "hidingComments">
+<button class="btn btn-sml btn" id="hide-comment">Hide Comments</button>
+</div>
+<!--<h2 class="commentForm-heading">Comments:</h2> -->
+{{#each comms}}
+
+<div class="comms">
+
+
+  <div class="regular comment-desc"> Year {{year}} from {{school}} on {{date}}: "{{commentPost}}"</div>
+  
+  <!--<p class="meta">Posted by: Year {{year}} from {{school}} on {{date}}</p> -->
+
+</div> <!--<h1>No Reviews to display</h1> -->
+
+{{/each}}
+
+	{{> commentSect}}
+{{/if}}
+</template>

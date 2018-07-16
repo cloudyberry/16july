@@ -1,0 +1,48 @@
+/*#search-wrap {
+  background-color: #eaeaea;
+  padding: 50px 20px;
+  margin-bottom: 50px;
+}*/
+
+#searchForm-wrap {
+	background-color: #eaeaea;
+	padding: 20px 20px;
+	margin-bottom: 50px;
+}
+
+#search-module {
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+#match-module {
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+
+@media (max-width: 500px) {
+  .details, .message {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    background-color: #fafafa;
+    width: 100%;
+    padding: 12px 15px;
+    border-top: 1px solid #ccc;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .details .name {
+    font-size: 1.2em;
+    padding-left: 0;
+  }
+
+  .user:hover {
+    background-color: inherit;
+  }
+
+  .user.selected:hover {
+    background-color: #fefff4;
+  }
+}

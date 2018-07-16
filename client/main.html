@@ -1,0 +1,44 @@
+<head>
+	<meta charset="utf-8">
+	<title>NUSModRev | Welcome</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,
+	user-scalable=no">
+
+	<link href='http://fonts.googleapis.com/css?family=Montserrat:100,300,400,700' rel='stylesheet'
+	type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700"
+	rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Caveat Brush' rel='stylesheet'>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	</head>
+
+<body>
+
+  	{{> sidebar}}
+		<!-- {{>hello}}
+	{{>test}} -->
+</body>
+
+<template name="hello">
+	{{#if loggedIn}}
+	<h3 class="black">Welcome {{testing}}. You are logged in. return <a href="/">home</a></h3>
+	<button class="btn btn-info" id="log-out" type="submit">Log out</button>
+	{{else}}
+	<div id="logging">
+	  <button class="btn btn-info" id="log-in" type="submit">Login NUS OPENID</button>
+	</div>
+	{{/if}}
+</template>
+<template name="main_layout">
+	<div class="main-content">
+		{{> yield}}
+	</div>
+</template>
+
+<template name = "test">
+	<h1> hey user {{testing}} </h1>
+</template>

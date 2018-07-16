@@ -1,0 +1,38 @@
+<!--lllllooks like profile.html but change to approve review-->
+<template name="unapproved">
+	{{#if admin}}
+	{{#each reviews}}
+
+	<div class="review">
+		<div class="row">
+			<div class=".col-sm-6 .col-md-5 .col-lg-6" id="info">
+				<!--jokeName,semester,recommendation,diff,workload,steepness,jokePost-->
+				<h1 class="review-title">{{reviewName}}</h1>
+				<p class="semester">Taken in: {{semester}}</p>
+				<p class="recommendation">Recommendation Level: {{recommendation}}</p>
+				<p class="diff">Difficulty Level: {{diff}}</p>
+				<p class="workload">Workload: {{workload}}</p>
+				<p class="webcast">Availabilty of Webcast: {{webcast}}</p>
+				<p class="steepness">Steepness of Bellcurve: {{steepness}}</p>
+
+			</div>
+		</div>
+
+		<p class="regular review-desc">"{{reviewPost}}"</p>
+		<a class="hashtag" id="hashtag" href="/hashtags">{{hashtag}}</a>
+		<!--<p class="meta">Posted by: {{author}} on {{date}}</p>-->
+		<p class="meta">Posted by: {{author}}(Year {{year}}) from {{school}} on {{date}}</p>
+
+		<!--only user can delete joke-->
+		<button class="btn btn-sml btn-warning" id="approve-review">Approve Review</button>
+		<button class="btn btn-sml btn-danger" id="delete-review">Delete Review</button>
+
+	</div>
+	<!-- End Joke -->
+	{{else}}
+	<h1>No Reviews to display</h1>
+	{{/each}}
+
+
+{{/if}}
+</template>

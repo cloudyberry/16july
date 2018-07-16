@@ -1,0 +1,29 @@
+<template name="commentSect">
+  <!-- this is the comment section form -->
+	{{#if currentUser}}
+	<!-- Review Form-->
+	<div id="commentSect-wrap">
+
+      <form class="commentSect-post">
+
+
+
+
+          <!--  <button type="button" class="btn btn-info" id="comment"><span class="glyphicon glyphicon-comment"></span> Comment</button>
+        </div> -->
+
+
+				<label for="commentPost" class="sr-only">Opinions on module</label>
+				<!--removed max length-->
+				<textarea rows="5" name="commentPost" id="commentPost" class="form-control" placeholder="Share your opinions on this review..."></textarea>
+				<!--<input type="text" name="jokePost" id="jokePost" class="form-control" placeholder="Break A Leg!">-->
+
+				<button class="btn btn-sml btn-primary" id="post-comment" type="submit">Post Comment</button>
+
+			</form>
+
+	</div>
+	<!-- End Review Form-->
+
+	{{/if}}
+</template>

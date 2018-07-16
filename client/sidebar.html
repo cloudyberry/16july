@@ -1,0 +1,41 @@
+<template name="sidebar">
+	<aside class="sidebar-left">
+	<img src="m4.png" class="icon">
+	<a class="company-logo" href="/">NUSModRev</a>
+		<div class="sidebar-links">
+
+
+			{{#if currentUser}}
+
+			{{#if admin}}
+			<a class="link-unapproved" href="/unapproved" id="unapproved-link"><i class="fa fa-columns"></i>unapproved</a>
+			<a class="link-approved" href="/approved" id="approved-link"><i class="fa fa-columns"></i>approved</a>
+			<a class="link-purple logout" href="https://openid.nus.edu.sg/auth/logout" id="logout-link"><i class="fa fa-sign-out" style="font-size:36px"></i>Logout</a>
+
+			{{else}}
+			<a class="link-red" href="/profile" id="profile-link"><i class="fa fa-user"></i>Profile</a>
+			<a class="link-blue" href="/" id="reviews-link"><i class="fa fa-clock-o" style="font-size:40px"></i>Latest</a>
+			<a class="link-yellow" href="/rankings" id="rankings-link"><i class="fa fa-gittip" style="font-size:40px"></i>Featured</a><!--Change to featured posts-->
+			<a class="link-green" href="/search" id="search-link"><i class="fa fa-search" style="font-size:40px"></i>Search</a>
+			<a class="link-purple logout" href="https://openid.nus.edu.sg/auth/logout" id="logout-link"><i class="fa fa-sign-out" style="font-size:36px"></i>Logout</a>
+			{{/if}}
+
+			{{else}}
+			<a class="link-blue" href="/" id="reviews-link"><i class="fa fa-clock-o" style="font-size:40px"></i>Latest</a>
+			<a class="link-yellow" href="/rankings" id="rankings-link"><i class="fa fa-gittip" style="font-size:40px"></i>Featured</a><!--Change to featured posts-->
+			<a class="link-green" href="/search" id="search-link"><i class="fa fa-search" style="font-size:40px"></i>Search</a>
+			<a class="link-pink login" href="https://openid.nus.edu.sg/auth/?openid.ns=http://specs.openid.net/auth/2.0&openid.mode=checkid_setup&openid.return_to=http://localhost:3000&openid.realm=http://localhost:3000/&openid.ax_mode=fetch_request&openid.ns.ax=http://openid.net/srv/ax/1.0&openid.ns.sreg=http://openid.net/extensions/sreg/1.1&openid.identity=http://specs.openid.net/auth/2.0/identifier_select&openid.claimed_id=http://specs.openid.net/auth/2.0/identifier_select&openid.ax.type.contact_email=http://axschema.org/contact/email&openid.ax.type.fullname=http://axschema.org/namePerson&openid.ax.type.user_id=%20http://axschemas.org/user/id&openid.ax.type.nickname=http://axschema.org/contact/nickname&openid.ax.required=contact_email,%20fullname&oopenid.sreg.required=email&oopenid.sreg.required=fullname&oopenid.sreg.required=nickname&controller=server&action=index&module=default" id="login-link"><i class="fa fa-sign-in"></i>Login</a>
+
+			{{/if}}
+
+		<!--	{{#if loggedOut}}
+			<a class="link-blue" href="/reviews" id="reviews-link"><i class="fa fa-clock-o" style="font-size:40px"></i>Latest</a>
+			<a class="link-yellow" href="/rankings" id="rankings-link"><i class="fa fa-gittip" style="font-size:40px"></i>Featured</a>
+			<a class="link-green" href="/search" id="search-link"><i class="fa fa-search" style="font-size:40px"></i>Search</a>
+			{{/if}}
+-->
+
+
+		</div>
+	</aside>
+</template>

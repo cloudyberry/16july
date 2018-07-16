@@ -1,0 +1,246 @@
+<template name="search">
+{{#if admin}}
+{{else}}
+
+<div id="searchForm-wrap">
+	<center>
+		<form class="search-form">
+
+			<h2 class="searchForm-heading">Search Module</h2>
+
+			<h6 class="modulecode">Module Code:</h6>
+								<select class="form-control" id="reviewName" name="reviewName">
+									<option>ACC1002: Financial Accounting</option>
+																	<option>ACC3605: Taxation</option>
+																	<option>ACC4619: Advanced Independent Study in Accounting</option>
+																	<option>AR5421: Architectural Practice 1</option>
+																	<option>BIS3001: Independent Study Module in Business</option>
+																	<option>BIS3001A: Independent Study Module in Business</option>
+																	<option>BL5102: Environmental Science</option>
+																	<option>BL5198: Graduate Seminar Module In Biological Sciences</option>
+																	<option>BL5201: Structural Biology And Proteomics</option>
+																	<option>BL5202A: Biophysical Methods In Life Sciences</option>
+																	<option>BL5203: Molecular Recognition And Interactions</option>
+																	<option>CS1020: Data Structures and Algorithms</option>
+																	<option>CS2100: Computer Organisation</option>
+																	<option>DEP5105: Urban Infrastructure and Mobility Systems</option>
+																	<option>DY5310: Endodontics</option>
+																	<option>EC1301: Principles of Economics</option>
+																	<option>EC3361: Labour Economics I</option>
+																	<option>EC4301: Microeconomic Analysis III</option>
+																	<option>FIN2004: Finance</option>
+																	<option>FMA1203C: FS: Smart Cities</option>
+																	<option>FMS1203B: FS: Exploring the Mysteries of Ageing</option>
+																	<option>FST4101: Flavour Science</option>
+																	<option>GE2220: Terrestrial and Coastal Environments</option>
+																	<option>GEH1034: Clean Energy and Storage</option>
+																	<option>GER1000: Quantitative reasoning</option>
+																	<option>IS1103: Computing and Society</option>
+																	<option>IS3150: Digital and New Media Marketing</option>
+																	<option>LAJ1201: Japanese 1</option>
+																	<option>LC5112: Common Law Of Obligations</option>
+																	<option>LSM2251: Ecology and Environment</option>
+																	<option>MA1312: Calculus with application</option>
+																	<option>MA5211: Lie Theory</option>
+																	<option>ME2113: Mechanics Of Materials I</option>
+																	<option>MLE2106: Metallic Materials and Processing</option>
+																	<option>MS3209: The Malays of Singapore</option>
+																	<option>NUR1117: Anatomy and Physiology I</option>
+																	<option>PA2106: Pharmacology 1</option>
+																	<option>PC1222: Fundamentals of Physics II</option>
+																	<option>RE1101: Fundamentals of Real Estate Finance</option>
+																	<option>RE2103: Urban Planning</option>
+																	<option>SC2101: Methods of Social Research</option>
+																	<option>SC3223: Visual Culture I: Seeing & Representing</option>
+																	<option>SC3225: Social Capital</option>
+																	<option>SC4212: Social Memory</option>
+								</select>
+			<button class="btn btn-lg btn-info btn-block" type="submit" id="search-module">Search Module</button>
+		</form>
+	</center>
+</div>
+	<!--<button class="btn btn-lg btn-info btn-block" type="submit" id="search-more">Back</button>-->
+{{#each reviews}}
+<!-- Joke -->
+
+<div class="review">
+	<div class="row">
+		<div class=".col-sm-6 .col-md-5 .col-lg-6" id="info">
+			<!--jokeName,semester,recommendation,diff,workload,steepness,jokePost-->
+			<h1 class="review-title">{{reviewName}}</h1>
+			<p class="semester">Taken in: {{semester}}</p>
+			<p class="recommendation">Recommendation Level: {{recommendation}}</p>
+			<p class="diff">Difficulty Level: {{diff}}</p>
+			<p class="workload">Workload: {{workload}}</p>
+			<p class="webcast">Availabilty of Webcast: {{webcast}}</p>
+			<p class="steepness">Steepness of Bellcurve: {{steepness}}</p>
+
+		</div>
+
+	</div>
+
+	<p class="regular review-desc">"{{reviewPost}}"</p>
+	<!--<p class="meta">Posted by: {{author}} on {{date}}</p>-->
+	<p class="meta">Posted by: {{author}}(Year {{year}}) from {{school}} on {{date}}</p>
+
+	<button type="button" class="btn btn-danger" id="like"><span class="glyphicon glyphicon-thumbs-up"></span> Likes ({{likeScore}})</button>
+	<button type="button" class="btn btn-warning" id="dislike"><span class="glyphicon glyphicon-thumbs-down"></span> Dislikes ({{dislikeScore}})</button>
+	<button type="button" class="btn btn-info"><span class="glyphicon glyphicon-comment"></span> Comment</button>
+<!-- End Joke -->
+</div>
+<!--<h1>No Reviews to display</h1>-->
+{{else}}
+<h1>No Reviews found</h1>
+{{/each}}
+
+
+
+	<div id="searchForm-wrap">
+			<center>
+				<form class="match-form">
+
+					<h2 class="matchForm-heading">Match a Module</h2>
+
+					<h6 class="recommendation">Recommendation Level:</h6>
+									<select class="form-control" id="recommendation" name="recommendation">
+									<option selected>All</option>
+									<option>5 (Being the most recommended)</option>
+									<option>4</option>
+									<option>3</option>
+									<option>2</option>
+									<option>1 (Being the least recommended)</option>
+									</select>
+
+				<h6 class="diff">Difficulty of Module:</h6>
+									<select class="form-control" id="diff" name="diff">
+									<option selected>All</option>
+									<option>Hard</option>
+									<option>Moderate</option>
+									<option>Easy</option>
+									</select>
+
+								<h6 class="workload">Workload of Module:</h6>
+								 <select class="form-control" id="workload" name="workload">
+									<option selected>All</option>
+									<option>High</option>
+									<option>Moderate</option>
+									<option>Low</option>
+								 </select>
+
+								 <h6 class="webcast">Availability of Webcast</h6>
+											<select class="form-control" id="webcast" name="webcast">
+												<option selected>All</option>
+												<option>Yes</option>
+												<option>No</option>
+											</select>
+
+								 <h6 class="steepness">Steepness of Bellcurve:</h6>
+								 <select class="form-control" id="steepness" name="steepness">
+									<option selected>All</option>
+									<option>High</option>
+									<option>Moderate</option>
+									<option>Low</option>
+									<option>No bellcurve</option>
+								 </select>
+
+				<button class="btn btn-lg btn-info btn-block" type="submit" id="match-module">Match a Module</button>
+
+			</form>
+		</center>
+	</div>
+
+{{#each matchedReviews}}
+<!-- Joke -->
+
+<div class="review">
+	<div class="row">
+		<div class=".col-sm-6 .col-md-5 .col-lg-6" id="info">
+			<!--jokeName,semester,recommendation,diff,workload,steepness,jokePost-->
+			<h1 class="review-title">{{reviewName}}</h1>
+			<p class="semester">Taken in: {{semester}}</p>
+			<p class="recommendation">Recommendation Level: {{recommendation}}</p>
+			<p class="diff">Difficulty Level: {{diff}}</p>
+			<p class="workload">Workload: {{workload}}</p>
+		  <p class="webcast">Availabilty of Webcast: {{webcast}}</p>
+			<p class="steepness">Steepness of Bellcurve: {{steepness}}</p>
+
+		</div>
+
+	</div>
+
+	<p class="regular review-desc">"{{reviewPost}}"</p>
+	<!--<p class="meta">Posted by: {{author}} on {{date}}</p>-->
+	<p class="meta">Posted by: {{author}}(Year {{year}}) from {{school}} on {{date}}</p>
+
+	<button type="button" class="btn btn-danger" id="like"><span class="glyphicon glyphicon-thumbs-up"></span> Likes ({{likeScore}})</button>
+	<button type="button" class="btn btn-warning" id="dislike"><span class="glyphicon glyphicon-thumbs-down"></span> Dislikes ({{dislikeScore}})</button>
+	<button type="button" class="btn btn-info"><span class="glyphicon glyphicon-comment"></span> Comment</button>
+<!-- End Joke -->
+</div>
+<!--<h1>No Reviews to display</h1>-->
+{{else}}
+<h1>No Matches found</h1>
+{{/each}}
+
+
+
+{{/if}}<!--if nonAdmin-->
+</template>
+
+<template name="User">
+	<li class="user black {{selected}}" id="user-link">
+		<span class="name">{{reviewName}}</span>
+
+
+		{{#if selected}}
+		<div class="reviewInfo">
+				<!--jokeName,semester,recommendation,diff,workload,steepness,jokePost-->
+
+				<div>
+					<span class="posy blue">Semester: {{semester}}</span>
+				</div>
+					<br>
+
+				<div>
+					<span class="posy blue">Recommendation Level: {{recommendation}}</span>
+				</div>
+					<br>
+
+				<div>
+					<span class="posy blue">Difficulty: {{diff}}</span>
+				</div>
+					<br>
+
+					<div>
+						<span class="posy blue">Availabilty of Webcast: {{webcast}}</span>
+					</div>
+						<br>
+
+			<div>
+				<span class="posy blue">{{reviewPost}}</span>
+			</div>
+				<br>
+
+			<div>
+				<span class="author">Posted by: {{author}} on {{date}}</span>
+			</div>
+				<br>
+
+			<div>
+				<span class="vote-score red">Likes: {{laughScore}}</span>
+			</div>
+				<br>
+
+			<div>
+				<span class="vote-score yellow">Dislikes: {{pukeScore}}</span>
+			</div>
+				<br>
+
+			<div>
+				<span class="vote-score green">Comments: {{pukeScore}}</span>
+			</div>
+
+		</div>
+		{{/if}}
+	</li>
+</template>

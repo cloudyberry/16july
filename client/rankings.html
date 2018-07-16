@@ -1,0 +1,44 @@
+<!--Changed format of post-->
+<!--need to add more stuff-->
+<template name="rankings">
+
+	{{> reviewForm}}
+
+	{{#each reviews}}
+	<!-- Joke -->
+	<div class="review">
+		<div class="row">
+			<div class=".col-sm-6 .col-md-5 .col-lg-6" id="info">
+				<!--jokeName,semester,recommendation,diff,workload,steepness,jokePost-->
+				<h1 class="review-title">{{reviewName}}</h1>
+				<p class="semester">Taken in: {{semester}}</p>
+				<p class="recommendation">Recommendation Level: {{recommendation}}</p>
+				<p class="diff">Difficulty Level:  {{diff}}</p>
+				<p class="workload">Workload: {{workload}}</p>
+				<p class="webcast">Availabilty of Webcast: {{webcast}}</p>
+				<p class="steepness">Steepness of Bellcurve: {{steepness}}</p>
+
+			</div>
+
+		</div>
+
+		<p class="regular review-desc">"{{reviewPost}}"</p>
+		<a class="hashtag" id="hashtag" href="/hashtags">{{hashtag}}</a>
+		<!--<p class="meta">Posted by: {{author}} on {{date}}</p>-->
+		<p class="meta">Posted by: {{author}}(Year {{year}}) from {{school}} on {{date}}</p>
+
+		<button type="button" class="btn btn-danger" id="like"><span class="glyphicon glyphicon-thumbs-up"></span> Likes ({{likeScore}})</button>
+		<button type="button" class="btn btn-warning" id="dislike"><span class="glyphicon glyphicon-thumbs-down"></span> Dislikes ({{dislikeScore}})</button>
+		<button type="button" class="btn btn-info" id="showcomment"><span class="glyphicon glyphicon-comment"></span> Comment</button>
+		{{# if displayComments}}
+		{{> comments}}
+		{{else}}
+		{{commentSect}}
+		<!-- End Review Form-->
+
+
+	{{/if}}
+	</div>
+	{{/each}}
+
+</template>
