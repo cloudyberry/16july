@@ -46,7 +46,7 @@
   text-align: center;
   /*color:  #b3bcc5;*/
   color: #134074;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   border-left-width: 3px;
   border-left-style: solid;
@@ -71,7 +71,7 @@
 .sidebar-left .sidebar-links a.selected{
   background-color: #ffffff;
   color: rgba(0, 0, 0, 1);
-  font-size: 12px;
+  font-size: 20px;
   font-weight: bold;
   cursor: default;
   -webkit-transition: all 0.5s;

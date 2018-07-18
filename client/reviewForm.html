@@ -1,18 +1,39 @@
 <template name="reviewForm">
 	{{#if currentUser}}
 	<!-- Review Form-->
+
 	<div id="reviewForm-wrap">
 		<center>
 			<form class="review-post">
 
 				<h2 class="reviewForm-heading">Post Review</h2>
 
+				<div class="container-contact100">
+					<div class="wrap-contact100">
+						<form class="contact100-form validate-form">
+				<div class="wrap-input100 input100-select">
+			<span class="label-input100">Needed Services</span>
+			<div>
+				<select class="selection-2" name="service">
+					<option>Choose Services</option>
+					<option>Online Store</option>
+					<option>eCommerce Bussiness</option>
+					<option>UI/UX Design</option>
+					<option>Online Services</option>
+				</select>
+			</div>
+			<span class="focus-input100"></span>
+		</div>
 
+
+<div class = "wrap">
 				<h6 class="hideName">Hide Name?</h6>
             <select class="form-control" id="hideName" name="hideName">
               <option>Yes</option>
               <option>No</option>
             </select>
+							<span class="input"></span>
+					</div>
 
 
 
@@ -129,6 +150,9 @@
 				<input type="text" name="hashtag" id="hashtag" class="form-control" value="#" placeholder="e.g. BestProf">
 				<button class="btn btn-lg btn-info btn-block" type="submit">Post Review</button>
 			</form>
+			</div>
+		</div>
+		</form>
 		</center>
 	</div>
 	<!-- End Review Form-->
